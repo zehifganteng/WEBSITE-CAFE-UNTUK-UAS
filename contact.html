@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Nature's Coffee - Contact</title>
+    <link rel="stylesheet" href="contact.css">
+    <link rel="icon" type="image/x-icon" href="IMG/favicon.ico">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <div class="logo">
+                <img src="IMG/logo.png" alt="Logo">
+                <h1 class="title">Nature's Coffee</h1>
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="menu.html">Menu</a></li>
+                    <li><a href="review.html">Review</a></li>
+                    <li><a href="contact.html" class="active">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="contact-us">
+            <div class="contact-container">
+                <h2 class="section-title">CONTACT</h2>
+                <div class="map">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d253129.00894142335!2d110.856381!3d-7.559627!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a14234667a3fd%3A0xbda63b32997616ad!2sUniversitas%20Sebelas%20Maret%20(UNS)!5e0!3m2!1sid!2sus!4v1729612070055!5m2!1sid!2sus" 
+                        width="100%" 
+                        height="450" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>                
+                <div class="contact-right">
+                    <div class="contact-info">
+                        <h3><i class="icon-office"></i>LOKASI</h3>
+                        <div class="location">
+                            <h5>SURAKARTA</h5>
+                            <p>Jalan Ir. Sutami 36 Kentingan, Jebres, Surakarta, Jawa Tengah, Indonesia 57126<br>
+                            Telp. (+62) 858 7164 1840</p>
+                        </div>
+                    </div>
+                    <div class="stores">
+                        <h3><i class="icon-store"></i>GERAI</h3>
+                        <p>Kami hanya ada di Solo. Gerai kami dapat menjadi solusi untuk keamburadulan pikiran Anda</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact-form">
+            <h2 class="section-title">KRITIK & SARAN</h2>
+            <form id="contactForm" action="#" method="POST">
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" placeholder="Masukkan email Anda" required>
+                </div>
+                <div class="form-group">
+                    <label for="name">Nama</label>
+                    <input type="text" id="name" name="name" placeholder="Masukkan nama Anda" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Pesan</label>
+                    <textarea id="message" name="message" rows="5" placeholder="Masukkan pesan Anda di sini" required></textarea>
+                </div>
+                <button type="button" class="btn-submit" id="submitButton">Kirim</button>
+            </form>
+        </section>
+        
+        <script>
+            document.getElementById('submitButton').addEventListener('click', function () {
+                const email = document.getElementById('email').value;
+                const name = document.getElementById('name').value;
+                const message = document.getElementById('message').value;
+
+                if (email === '' || name === '' || message === '') {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        text: 'Harap isi semua kolom formulir!',
+                    });
+                    return;
+                }
+
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Pesan Terkirim!',
+                    text: 'Terima kasih atas kritik & saran Anda.',
+                });
+ 
+                document.getElementById('email').value = '';
+                document.getElementById('name').value = '';
+                document.getElementById('message').value = '';
+            });
+        </script>        
+
+        <section class="social-links">
+            <h2>MEDIA SOSIAL</h2>
+            <p>Ikuti kami di media sosial untuk kabar terbaru dan promo menarik:</p>
+            <div class="social-icons">
+                <div class="social-item">
+                        <img href="https://wa.me/6285871641840" target="_blank" src="IMG/whatsapp.png" alt="WhatsApp" class="social-icon-image">
+                        <p>WHATSAPP</p>
+                        <a href="https://wa.me/6285871641840" target="_blank">085871641840</a>
+                    </a>
+                </div>
+                <div class="social-item">
+                        <img href="https://www.instagram.com/n_naturescoffee?igsh=MXFnem93NmY0aXdjdg==" target="_blank" src="IMG/Instagram.png" alt="Instagram" class="social-icon-image">
+                        <p>INSTAGRAM</p>
+                        <a href="https://www.instagram.com/n_naturescoffee?igsh=MXFnem93NmY0aXdjdg==" target="_blank">@n_naturescoffee</a >
+                    </a>
+                </div>
+                <div class="social-item">
+                        <img href="https://www.tiktok.com/@fafroyyyganteng?_t=8s5nTbUpbGh&_r=1" target="_blank" src="IMG/Tiktok.png" alt="Tik Tok" class="social-icon-image">
+                        <p>TIKTOK</p>
+                        <a href="https://www.tiktok.com/@fafroyyyganteng?_t=8s5nTbUpbGh&_r=1" target="_blank">Nature's Coffee</a>
+                    </a>
+                </div>
+                <div class="social-item">
+                        <img href="https://youtube.com/@rizzalalfa?si=di7vj0hDoTW8D2uB" src="IMG/Youtube.png" alt="Youtube" class="social-icon-image">
+                        <p>YOUTUBE</p>
+                        <a href="https://youtube.com/@rizzalalfa?si=di7vj0hDoTW8D2uB" target="_blank">Nature's Coffee</a>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Nature's Coffee, All Rights Reserved.</p>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>

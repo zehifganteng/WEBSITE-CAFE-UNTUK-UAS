@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Nature's Coffee - Menu</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="menu.css">
+    <link rel="icon" type="image/x-icon" href="IMG/favicon.ico">
+</head>
+<body>
+    <header>
+         <div class="navbar">
+             <div class="logo">
+                 <img src="IMG/logo.png" alt="Logo">
+                 <h1 class="title">Nature's Coffee</h1>
+             </div>
+             <nav>
+                 <ul class="nav-links">
+                     <li><a href="index.html">Home</a></li>
+                     <li><a href="about.html">About</a></li>
+                     <li><a href="menu.html">Menu</a></li>
+                     <li><a href="review.html">Review</a></li>
+                     <li><a href="contact.html">Contact</a></li>
+                 </ul>
+             </nav>
+         </div>
+     </header>
+
+    <main>
+        <h1 class="menu-title">MENU</h1>
+        <section class="menu-section">
+            <h2>MINUMAN</h2>
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <h3>BLACK COFFE</h3>
+                    <img src="IMG/KopiHitam.jpeg" alt="Kopi Hitam">
+                    <p class="price">Rp10.000</p>
+                    <button class="add-to-cart">Tambah ke Keranjang</button>
+                </div>
+                <div class="menu-item">
+                    <h3>ESPRESSO</h3>
+                    <img src="IMG/espresso.jpeg" alt="Espresso">
+                    <p class="price">Rp10.000</p>
+                    <button class="add-to-cart">Tambah ke Keranjang</button>
+                </div>
+                <div class="menu-item">
+                    <h3>AMERICANO</h3>
+                    <img src="IMG/americano.jpeg" alt="Americano">
+                    <p class="price">Rp10.000</p>
+                    <button class="add-to-cart">Tambah ke Keranjang</button>
+                </div>
+                <div class="menu-item">
+                    <h3>CAFE LATTE</h3>
+                    <img src="IMG/cafelatte.jpeg" alt="Cafe Latte">
+                    <p class="price">Rp13.000</p>
+                    <button class="add-to-cart">Tambah ke Keranjang</button>
+                </div>
+                <div class="menu-item">
+                    <h3>CREAMY LATTE</h3>
+                    <img src="IMG/creamylatte.jpeg" alt="Creamy Coffee">
+                    <p class="price">Rp15.000</p>
+                    <button class="add-to-cart">Tambah ke Keranjang</button>
+                </div>
+                <div class="menu-item">
+                    <h3>VANILLA LATTE</h3>
+                    <img src="IMG/vanillalate.jpeg" alt="Vanilla Latte">
+                    <p class="price">Rp13.000</p>
+                    <button class="add-to-cart">Tambah ke Keranjang</button>
+                </div>
+                <div class="menu-item">
+                    <h3>LUWAK COFFEE</h3>
+                    <img src="IMG/luwak.jpeg" alt="Caramel Macchiato">
+                    <p class="price">Rp12.000</p>
+                    <button class="add-to-cart">Tambah ke Keranjang</button>
+                </div>
+                <div class="menu-item">
+                    <h3>MATCHA LATTE</h3>
+                    <img src="IMG/matcha.jpeg" alt="Mocha Latte">
+                    <p class="price">Rp17.000</p>
+                    <button class="add-to-cart">Tambah ke Keranjang</button>
+                </div>
+                <div class="menu-item">
+                    <h3>CAPPUCCINO</h3>
+                    <img src="IMG/cappucino.jpeg" alt="Cappuccino">
+                    <p class="price">Rp15.000</p>
+                    <button class="add-to-cart">Tambah ke Keranjang</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="menu-section">
+            <h2>MAKANAN</h2>
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <h3>ROTI BAKAR</h3>
+                    <img src="IMG/RotiBakar.jpg" alt="Roti Bakar">
+                    <p class="price">Rp16.000</p>
+                    <button class="add-to-cart">Tambah ke Keranjang</button>
+                </div>
+                <div class="menu-item">
+                    <h3>ROTI COKLAT</h3>
+                    <img src="IMG/Roticoklat.jpeg" alt="Roti Coklat">
+                    <p class="price">Rp18.000</p>
+                    <button class="add-to-cart">Tambah ke Keranjang</button>
+                </div>
+                <div class="menu-item">
+                    <h3>ROTI TAWAR</h3>
+                    <img src="IMG/rotitawar.jpg" alt="Roti Tawar">
+                    <p class="price">Rp12.000</p>
+                    <button class="add-to-cart">Tambah ke Keranjang</button>
+                </div>
+            </div>
+        </section>
+    </main>
+    <div class="cart-container">
+        <h1 class="cart-title">KERANJANG</h1>
+        <div class="cart-content">
+            <div class="cart-header">
+                <div class="cart-row">
+                    <div>Produk</div>
+                    <div>Harga</div>
+                    <div>Jumlah</div>
+                </div>
+            </div>
+            <div class="cart-items">
+            </div>
+            <div id="cart-empty" class="cart-empty" style="display: block;">
+                <h3>Keranjang masih kosong</h3>
+            </div>
+            <div class="cart-total">
+                Total: <span>Rp0</span>
+            </div>
+            <button class="proceed-to-payment" onclick="proceedToPayment()">Lanjut Pembayaran</button>            
+        </div>
+    </div>
+
+    <script>
+        let cart = [];
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const addToCartButtons = document.querySelectorAll('.add-to-cart');
+            addToCartButtons.forEach(button => {
+                button.addEventListener('click', addToCart);
+            });
+
+            const savedCart = JSON.parse(localStorage.getItem('cartItems'));
+            if (savedCart) {
+                cart = savedCart;
+                updateCartDisplay();
+            }
+        });
+
+        function addToCart(event) {
+            const menuItem = event.target.closest('.menu-item');
+            if (!menuItem) return;
+
+            const title = menuItem.querySelector('h3').textContent;
+            const price = menuItem.querySelector('.price').textContent;
+            const priceNumber = parseInt(price.replace(/[Rp.,]/g, ''));
+            const imgSrc = menuItem.querySelector('img').src;
+
+            const existingItem = cart.find(item => item.title === title);
+            if (existingItem) {
+                existingItem.quantity += 1;
+            } else {
+                cart.push({
+                    title: title,
+                    price: priceNumber,
+                    quantity: 1,
+                    imgSrc: imgSrc
+                });
+            }
+
+            updateCartDisplay();
+        }
+
+        function updateCartDisplay() {
+            const cartItemsContainer = document.querySelector('.cart-items');
+            cartItemsContainer.innerHTML = '';
+            let total = 0;
+
+            cart.forEach(item => {
+                const itemTotal = item.price * item.quantity;
+                total += itemTotal;
+
+                cartItemsContainer.innerHTML += `
+                    <div class="cart-row">
+                        <div class="cart-item">
+                            <img src="${item.imgSrc}" alt="${item.title}">
+                            <span>${item.title}</span>
+                        </div>
+                        <div class="cart-price">Rp${item.price.toLocaleString()}</div>
+                        <div class="cart-quantity">
+                            <input type="number" value="${item.quantity}" min="1" 
+                                   onchange="updateQuantity('${item.title}', this.value)">
+                            <button class="remove-button" onclick="removeItem('${item.title}')">Batalkan</button>
+                        </div>
+                    </div>
+                `;
+            });
+
+            document.querySelector('.cart-total span').textContent = `Rp${total.toLocaleString()}`;
+            localStorage.setItem('cartItems', JSON.stringify(cart));
+
+            const emptyCartMessage = document.getElementById('cart-empty');
+            emptyCartMessage.style.display = cart.length > 0 ? 'none' : 'block';
+        }
+
+        function updateQuantity(title, newQuantity) {
+            const item = cart.find(item => item.title === title);
+            if (item) {
+                item.quantity = parseInt(newQuantity);
+                updateCartDisplay();
+            }
+        }
+
+        function removeItem(title) {
+            cart = cart.filter(item => item.title !== title);
+            updateCartDisplay();
+        }
+
+        function proceedToPayment() {
+            const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+            localStorage.setItem('totalPayment', total);
+            window.location.href = 'payment.html';
+        }
+    </script>
+
+    <footer class="footer"> 
+        <div class="container container-footer">
+            <div class="menu-footer">
+                <div class="contact-info">
+                    <p class="title-footer">HUBUNGI KAMI</p>
+                    <ul>
+                        <li>Telepon: 0858 7164 1840</li>
+                        <li>
+                            Email: 
+                            <a href="https://mail.google.com/mail/u/0/#sent?compose=DmwnWrRttFtTMMwKBLBcbkPczrdnVSNJSbdxZQqnDDjwxhbwMNzdttNDSHBqjMwPpTQvmRwRmMVq" class="email-link">
+                                hifzhedine8@student.uns.ac.id
+                            </a>
+                        </li>
+                    </ul>
+                    
+                    <div class="my-account">
+                        <p class="title-footer">TEMUKAN KAMI</p>
+                        <div class="social-icons">
+                            <a href="https://wa.me/6285871641840" target="_blank">
+                                <img src="IMG/Whatsapp.png" alt="WhatsApp">
+                            </a>
+                            <a href="https://www.instagram.com/n_naturescoffee?igsh=MXFnem93NmY0aXdjdg==" target="_blank">
+                                <img src="IMG/Instagram.png" alt="Instagram">
+                            </a>
+                            <a href="https://www.tiktok.com/@fafroyyyganteng?_t=8s5nTbUpbGh&_r=1" target="_blank">
+                                <img src="IMG/Tiktok.png" alt="Tik Tok">
+                            </a>
+                            <a href="https://youtube.com/@rizzalalfa?si=di7vj0hDoTW8D2uB" target="_blank">
+                                <img src="IMG/Youtube.png" alt="You Tube">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="location">
+                    <p class="title-footer">LOKASI KAMI</p>
+                    <ul>
+                        <li>
+                            <div class="marker"></div>
+                            Jalan Ir. Sutami 36 Kentingan, Jebres, Surakarta, Jawa Tengah, Indonesia 57126
+                        </li>
+                    </ul>
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d253129.00894142335!2d110.856381!3d-7.559627!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a14234667a3fd%3A0xbda63b32997616ad!2sUniversitas%20Sebelas%20Maret%20(UNS)!5e0!3m2!1sid!2sus!4v1729612070055!5m2!1sid!2sus" 
+                        width="100%" 
+                        height="150" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy">
+                    </iframe>
+                </div>
+    
+                <div class="certification">
+                    <p class="title-footer">SERTIFIKASI</p>
+                    <img src="IMG/Halal.png" alt="Sertifikasi" class="certification-img">
+                </div>
+            </div>
+    
+            <div class="copyright">
+                <p>&copy; 2024 Nature's Coffee, All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="main.js"></script>
+</body>
+</html>

@@ -384,44 +384,13 @@ footer {
 }
 
 @media screen and (max-width: 768px) {
-    header {
-        flex-wrap: wrap;
-        padding: 10px;
-    }
-    .navbar nav ul {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 10px;
-    }
-    .logo img {
-        height: 50px;
-    }
-    .title {
-        font-size: 20px;
-    }
-    .section-title {
-        font-size: 2em;
-        margin-top: 100px;
-    }
-    .contact-container {
-        flex-direction: column;
-        gap: 10px;
-    }
-    .contact-info h3, .stores h3 {
-        font-size: 1.5em;
-    }
-    .contact-info p, .stores p {
-        font-size: 0.9em;
-    }
-    .contact-form {
-        padding: 20px 10px;
-    }
     .social-links h2 {
         font-size: 2em;
+        margin-bottom: 10px;
     }
     .social-icons {
         grid-template-columns: repeat(2, 1fr);
-        gap: 10px;
+        gap: 15px;
     }
     .social-item img {
         width: 50px;
@@ -430,6 +399,10 @@ footer {
 }
 
 @media screen and (max-width: 425px) {
+    .social-links h2 {
+        font-size: 1.5em;
+        margin-bottom: 10px;
+    }
     .social-icons {
         display: flex;
         flex-direction: column;
@@ -460,10 +433,6 @@ footer {
     }
     .social-item a:hover {
         text-decoration: underline;
-    }
-    .social-links h2 {
-        font-size: 1.5em;
-        margin-bottom: 10px;
     }
     .social-links p {
         font-size: 0.9em;
